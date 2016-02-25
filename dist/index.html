@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <!--
+      ███████╗███╗   ███╗██████╗ ███████╗██████╗     ██████╗ ██████╗ ███████╗██╗      ██████╗  █████╗ ██████╗ ███████╗██████╗
+      ██╔════╝████╗ ████║██╔══██╗██╔════╝██╔══██╗    ██╔══██╗██╔══██╗██╔════╝██║     ██╔═══██╗██╔══██╗██╔══██╗██╔════╝██╔══██╗
+      █████╗  ██╔████╔██║██████╔╝█████╗  ██████╔╝    ██████╔╝██████╔╝█████╗  ██║     ██║   ██║███████║██║  ██║█████╗  ██████╔╝
+      ██╔══╝  ██║╚██╔╝██║██╔══██╗██╔══╝  ██╔══██╗    ██╔═══╝ ██╔══██╗██╔══╝  ██║     ██║   ██║██╔══██║██║  ██║██╔══╝  ██╔══██╗
+      ███████╗██║ ╚═╝ ██║██████╔╝███████╗██║  ██║    ██║     ██║  ██║███████╗███████╗╚██████╔╝██║  ██║██████╔╝███████╗██║  ██║
+      ╚══════╝╚═╝     ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝    ╚═╝     ╚═╝  ╚═╝╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+    
+      Ember Preloader
+    -->
+    <title>Ember Preloader</title>
+    <meta charset="utf-8" />
+    <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+    <meta content="A Preloader for ambitious web applications." name="abstract" />
+    <meta content="Bitaculous" name="author" />
+    <meta content="©2016 Bitaculous - All rights reserved." name="copyright" />
+    <meta content="A Preloader for ambitious web applications." name="description" />
+    <meta content="Middleman: Hand-crafted frontend development (http://middlemanapp.com)" name="generator" />
+    <meta content="Ember, Preloader, Front-End, Bitaculous" name="keywords" />
+    <meta content="Bitaculous" name="publisher" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="1.0.0" name="version" />
+    <link href="/assets/stylesheets/ember/preloader.css" rel="stylesheet" media="all" />
+  </head>
+  <body class="default canvas" id="index">
+    <div class="ember">
+      <div class="app"></div>
+      <div class="preloader"></div>
+    </div>
+    <script src="/assets/javascripts/ember/preloader.js"></script>
+    <script type="text/javascript">
+      //<![CDATA[
+        (function() {
+          var manifest, preloader, selector;
+        
+          selector = '.preloader';
+        
+          manifest = {
+            files: [
+              {
+                'id': 'app.css',
+                'type': 'css',
+                'src': '/assets/stylesheets/ember/app.css'
+              }, {
+                'id': 'logo.png',
+                'type': 'image',
+                'src': '/assets/images/ember/preloader/contour/shared/elements/logo/background.png'
+              }, {
+                'id': 'app.js',
+                'type': 'javascript',
+                'src': '/assets/javascripts/ember/app.js'
+              }
+            ],
+            media: [
+              {
+                slug: 'small',
+                query: '(min-width: 320px) and (max-width: 480px)',
+                files: [
+                  {
+                    'id': 'logo.png',
+                    'type': 'image',
+                    'src': '/assets/images/ember/app/media/screen/small/shared/elements/logo/background.png'
+                  }
+                ]
+              }, {
+                slug: 'large',
+                query: '(min-width: 1024px)',
+                files: [
+                  {
+                    'id': 'logo.png',
+                    'type': 'image',
+                    'src': '/assets/images/ember/app/media/screen/large/shared/elements/logo/background.png'
+                  }
+                ]
+              }
+            ]
+          };
+        
+          preloader = new Preloader(selector, manifest, {
+            before: function() {
+              console.info('Preloading application...');
+            },
+            complete: function() {
+              var app;
+              console.info('Application loaded.');
+              app = new App('.app', {
+                logging: true
+              });
+            },
+            logging: true
+          });
+        
+        }).call(this);
+      //]]>
+    </script>
+  </body>
+</html>
