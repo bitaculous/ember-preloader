@@ -1,0 +1,232 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ember-preloader by bitaculous</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Ember-preloader</h1>
+        <p>A Preloader for ambitious web applications.</p>
+
+        <p class="view"><a href="https://github.com/bitaculous/ember-preloader">View the Project on GitHub <small>bitaculous/ember-preloader</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/bitaculous/ember-preloader/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/bitaculous/ember-preloader/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/bitaculous/ember-preloader">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<h3>
+<a id="bower" class="anchor" href="#bower" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="http://bower.io" title="A package manager for the web">Bower</a>
+</h3>
+
+<p>Run <code>bower install bitaculous/ember-preloader</code>.</p>
+
+<h3>
+<a id="npm" class="anchor" href="#npm" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://www.npmjs.com" title="A package manager for JavaScript">npm</a>
+</h3>
+
+<p>Run <code>npm install bitaculous/ember-preloader</code>.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<ol>
+<li><p>Include Ember Preloader Cascading Style Sheets</p></li>
+<li><p>Include Ember Preloader JavaScript</p></li>
+<li>
+<p>Create a manifest, which specifies what and when to load</p>
+
+<div class="highlight highlight-source-coffee"><pre><span class="pl-v"><span class="pl-v">manifest <span class="pl-k">=</span></span></span>
+  <span class="pl-v"><span class="pl-v">files:</span></span> [
+    {
+      <span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ambitious.css<span class="pl-pds">'</span></span>
+      <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>css<span class="pl-pds">'</span></span>
+      <span class="pl-s"><span class="pl-pds">'</span>src<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/assets/stylesheets/ambitious.css<span class="pl-pds">'</span></span>
+    }
+
+    {
+      <span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ambitious.png<span class="pl-pds">'</span></span>
+      <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>image<span class="pl-pds">'</span></span>
+      <span class="pl-s"><span class="pl-pds">'</span>src<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/assets/images/ambitious.png<span class="pl-pds">'</span></span>
+    }
+
+    {
+      <span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ambitious.js<span class="pl-pds">'</span></span>
+      <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>javascript<span class="pl-pds">'</span></span>
+      <span class="pl-s"><span class="pl-pds">'</span>src<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/assets/javascripts/ambitious.js<span class="pl-pds">'</span></span>
+    }
+  ]
+
+  <span class="pl-v"><span class="pl-v">media:</span></span> [
+    {
+      <span class="pl-c"># Small, beginning at 320 until 480px</span>
+      <span class="pl-v"><span class="pl-v">slug:</span></span> <span class="pl-s"><span class="pl-pds">'</span>small<span class="pl-pds">'</span></span>
+      <span class="pl-v"><span class="pl-v">query:</span></span> <span class="pl-s"><span class="pl-pds">'</span>(min-width: 320px) and (max-width: 480px)<span class="pl-pds">'</span></span>
+      <span class="pl-v"><span class="pl-v">files:</span></span> [
+        {
+          <span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ambitious.png<span class="pl-pds">'</span></span>
+          <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>image<span class="pl-pds">'</span></span>
+          <span class="pl-s"><span class="pl-pds">'</span>src<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/assets/images/small/ambitious.png<span class="pl-pds">'</span></span>
+        }
+      ]
+    }
+
+    {
+      <span class="pl-c"># Large, beginning at 1024px</span>
+      <span class="pl-v"><span class="pl-v">slug:</span></span> <span class="pl-s"><span class="pl-pds">'</span>large<span class="pl-pds">'</span></span>
+      <span class="pl-v"><span class="pl-v">query:</span></span> <span class="pl-s"><span class="pl-pds">'</span>(min-width: 1024px)<span class="pl-pds">'</span></span>
+      <span class="pl-v"><span class="pl-v">files:</span></span> [
+        {
+          <span class="pl-s"><span class="pl-pds">'</span>id<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>ambitious.png<span class="pl-pds">'</span></span>
+          <span class="pl-s"><span class="pl-pds">'</span>type<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>image<span class="pl-pds">'</span></span>
+          <span class="pl-s"><span class="pl-pds">'</span>src<span class="pl-pds">'</span></span><span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>/assets/images/large/ambitious.png<span class="pl-pds">'</span></span>
+        }
+      ]
+    }
+  ]</pre></div>
+</li>
+<li>
+<p>Configure and launch Ember Preloader</p>
+
+<div class="highlight highlight-source-coffee"><pre><span class="pl-v"><span class="pl-v">selector <span class="pl-k">=</span></span></span> <span class="pl-s"><span class="pl-pds">'</span>.preloader<span class="pl-pds">'</span></span>
+
+<span class="pl-v"><span class="pl-v">preloader <span class="pl-k">=</span></span></span> <span class="pl-k">new</span> <span class="pl-en">Preloader</span> selector, manifest,
+  <span class="pl-en">before</span><span class="pl-k">:</span> <span class="pl-k"><span class="pl-k">-&gt;</span></span>
+    <span class="pl-en">console</span>.<span class="pl-en">info </span><span class="pl-s"><span class="pl-pds">'</span>Before...<span class="pl-pds">'</span></span>
+
+    <span class="pl-k">return</span>
+  <span class="pl-en">complete</span><span class="pl-k">:</span> <span class="pl-k"><span class="pl-k">-&gt;</span></span>
+    <span class="pl-en">console</span>.<span class="pl-en">info </span><span class="pl-s"><span class="pl-pds">'</span>Complete...<span class="pl-pds">'</span></span>
+
+    <span class="pl-k">return</span>
+  <span class="pl-v"><span class="pl-v">logging:</span></span> <span class="pl-c1">true</span></pre></div>
+
+<p>or</p>
+
+<div class="highlight highlight-source-coffee"><pre><span class="pl-v"><span class="pl-v">selector <span class="pl-k">=</span></span></span> <span class="pl-s"><span class="pl-pds">'</span>.preloader<span class="pl-pds">'</span></span>
+
+<span class="pl-v"><span class="pl-v">preloader <span class="pl-k">=</span></span></span> <span class="pl-k">new</span> <span class="pl-en">Preloader</span> selector, <span class="pl-c1">null</span>,
+  <span class="pl-en">before</span><span class="pl-k">:</span> <span class="pl-k"><span class="pl-k">-&gt;</span></span>
+    <span class="pl-en">console</span>.<span class="pl-en">info </span><span class="pl-s"><span class="pl-pds">'</span>Before...<span class="pl-pds">'</span></span>
+
+    <span class="pl-k">return</span>
+  <span class="pl-en">complete</span><span class="pl-k">:</span> <span class="pl-k"><span class="pl-k">-&gt;</span></span>
+    <span class="pl-en">console</span>.<span class="pl-en">info </span><span class="pl-s"><span class="pl-pds">'</span>Complete...<span class="pl-pds">'</span></span>
+
+    <span class="pl-k">return</span>
+  <span class="pl-v"><span class="pl-v">logging:</span></span> <span class="pl-c1">true</span>
+
+preloader.<span class="pl-en">load </span>manifest</pre></div>
+</li>
+</ol>
+
+<h2>
+<a id="development" class="anchor" href="#development" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Development</h2>
+
+<h3>
+<a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prerequisites</h3>
+
+<ul>
+<li><a href="https://www.ruby-lang.org" title="A dynamic, open source programming language with a focus on simplicity and productivity.">Ruby</a></li>
+<li><a href="https://nodejs.org" title="An event-driven I/O server-side JavaScript environment based on V8.">Node.js</a></li>
+</ul>
+
+<h3>
+<a id="installation-1" class="anchor" href="#installation-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h3>
+
+<ol>
+<li><p>Run <code>bundle</code> to install all dependencies with <a href="http://bundler.io" title="The best way to manage a Ruby application's gems">Bundler</a></p></li>
+<li><p>Run <code>bower install</code> to install all dependencies with <a href="http://bower.io" title="A package manager for the web">Bower</a></p></li>
+</ol>
+
+<h3>
+<a id="usage-1" class="anchor" href="#usage-1" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
+
+<ol>
+<li>
+<p>Boot up <a href="http://middlemanapp.com" title="Hand-crafted frontend development">Middleman</a></p>
+
+<pre><code>$ ./bin/middleman/server
+</code></pre>
+
+<p>or</p>
+
+<pre><code>$ middleman --verbose
+</code></pre>
+</li>
+<li><p>Open your Web browser at <a href="http://0.0.0.0:4567" title="Ember Preloader running on localhost">http://0.0.0.0:4567</a> and start hacking</p></li>
+</ol>
+
+<h3>
+<a id="building-ember-preloader" class="anchor" href="#building-ember-preloader" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Building Ember Preloader</h3>
+
+<p>Run <code>middleman build</code> or <code>middleman build --verbose</code>.</p>
+
+<h2>
+<a id="code-status" class="anchor" href="#code-status" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Code Status</h2>
+
+<p><a href="https://gemnasium.com/bitaculous/ember-preloader" title="Ember Preloader at Gemnasium"><img src="https://img.shields.io/gemnasium/bitaculous/ember-preloader.svg?style=flat" alt="Gemnasium Status" title="Gemnasium Status"></a></p>
+
+<h2>
+<a id="bug-reports" class="anchor" href="#bug-reports" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Bug Reports</h2>
+
+<p>Github Issues are used for managing bug reports and feature requests. If you run into issues, please search the issues
+and submit new problems <a href="https://github.com/bitaculous/ember-preloader/issues" title="Github Issues">here</a>.</p>
+
+<h2>
+<a id="versioning" class="anchor" href="#versioning" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Versioning</h2>
+
+<p>This library aims to adhere to <a href="http://semver.org" title="Semantic Versioning 2.0.0">Semantic Versioning 2.0.0</a>. Violations of this scheme should be reported as bugs.
+Specifically, if a minor or patch version is released that breaks backward compatibility, that version should be
+immediately yanked and / or a new version should be immediately released that restores compatibility.</p>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+
+<h3>
+<a id="ember-preloader-uses-the-following-libraries" class="anchor" href="#ember-preloader-uses-the-following-libraries" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Ember Preloader uses the following libraries:</h3>
+
+<ul>
+<li><a href="https://bitaculous.github.io/assetify/" title="Assets used by Bitaculous, packaged for Bower, npm, Sass, Sprockets and Thor.">Assetify</a></li>
+</ul>
+
+<h4>
+<a id="javascript" class="anchor" href="#javascript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>JavaScript</h4>
+
+<ul>
+<li><a href="https://modernizr.com" title="The feature detection library for HTML5/CSS3">Modernizr</a></li>
+<li><a href="http://ricostacruz.com/nprogress/" title="A nanoscopic progress bar. Featuring realistic trickle animations to convince your users that something is happening!">NProgress.js</a></li>
+<li><a href="https://github.com/CreateJS/PreloadJS" title="Makes preloading assets &amp; getting aggregate progress events easier in JavaScript.">PreloadJS</a></li>
+<li><a href="https://github.com/ryanve/verge" title="Viewport utilities modul">verge</a></li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>Ember Preloader is released under the <a href="http://opensource.org/licenses/MIT" title="The MIT License (MIT)">MIT License (MIT)</a>, see <a href="https://raw.githubusercontent.com/bitaculous/ember-preloader/master/LICENSE" title="License">LICENSE</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/bitaculous">bitaculous</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
