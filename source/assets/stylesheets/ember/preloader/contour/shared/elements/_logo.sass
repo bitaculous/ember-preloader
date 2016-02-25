@@ -1,0 +1,27 @@
+// _logo.sass
+//
+// @package ember/preloader/contour/shared/elements
+
+@mixin logo
+  $logo-height:  96px !default
+  $logo-width:   96px !default
+  $logo-opacity: 0    !default
+
+  .logo
+    display: none
+    height: $logo-height
+    opacity: $logo-opacity
+    width: $logo-width
+
+    .active &
+      display: block
+
+    .loading &
+      animation-duration: map-get($heat-up, time)
+      animation-name: fade-in
+
+    .complete &
+      animation-duration: map-get($cooling, time)
+      animation-name: fade-out
+
+    @include retina-image('ember/preloader/contour/shared/elements/logo/background', $logo-width $logo-height)

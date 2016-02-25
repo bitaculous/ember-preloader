@@ -1,0 +1,61 @@
+// _variables.scss
+//
+// @package ember/preloader
+
+// === Defaults ===
+
+$defaults: (
+  baseline: 16px
+);
+
+// === Colors ===
+
+$colors: (
+  primary: blueviolet,
+
+  black: #000,
+  white: #FFF
+);
+
+// === Canvas ===
+
+$canvas: (
+  background: map-get($colors, black),
+  color: map-get($colors, white)
+);
+
+// === Progress ===
+
+$progress: (
+  bar: (
+    color: map-get($colors, primary),
+    height: 6px
+  ),
+
+  peg: (
+    box-shadow: (
+      color: map-get($colors, primary)
+    ),
+    opacity: 1.0
+  ),
+
+  spinner: (
+    icon: (
+      color: map-get($colors, primary)
+    )
+  ),
+
+  z-index: 9999
+);
+
+// === Heat up ===
+
+$heat-up: (
+  time: 2s
+);
+
+// === Cooling ===
+
+$cooling: (
+  time: 1s
+);

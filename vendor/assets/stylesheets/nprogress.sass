@@ -1,0 +1,22 @@
+// nprogress.sass
+//
+// @package vendor
+// @source <https://github.com/rstacruz/nprogress/blob/master/nprogress.css>
+// @license MIT License (MIT) <http://opensource.org/licenses/MIT>
+
+@import nprogress/events
+@import nprogress/bar
+@import nprogress/peg
+@import nprogress/spinner
+@import nprogress/custom_parent
+
+#nprogress
+  @include events
+
+  @include bar
+
+  @include peg
+
+  @include spinner
+
+@include custom_parent

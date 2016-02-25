@@ -1,0 +1,29 @@
+// _spinner.sass
+//
+// @package vendor/nprogress
+
+@mixin spinner
+  .spinner
+    display: block
+    position: fixed
+    right: calc(10px + #{map-get-deep($progress, bar, height)})
+    top: calc(10px + #{map-get-deep($progress, bar, height)})
+    z-index: map-get($progress, z-index)
+
+  .spinner-icon
+    animation: nprogress-spinner 400ms linear infinite
+    border-color: map-get-deep($progress, spinner, icon, color) map-get-deep($progress, spinner, icon, color) transparent transparent
+    border-radius: 50%
+    border-style: solid
+    border-width: 2px
+    box-sizing: border-box
+    height: 16px
+    width: 16px
+
+  &
+    @keyframes nprogress-spinner
+      0%
+        transform: rotate(0deg)
+
+      100%
+        transform: rotate(360deg)

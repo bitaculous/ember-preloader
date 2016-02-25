@@ -1,0 +1,15 @@
+// _peg.sass
+//
+// @package vendor/nprogress
+
+@mixin peg
+  .peg
+    box-shadow: 0 0 10px map-get-deep($progress, peg, box-shadow, color), 0 0 5px map-get-deep($progress, peg, box-shadow, color)
+    display: block
+    height: 100%
+    opacity: map-get-deep($progress, peg, opacity)
+    position: absolute
+    right: 0
+    width: 100px
+
+    transform: rotate(3deg) translate(0, -4px)

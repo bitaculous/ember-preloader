@@ -1,0 +1,10 @@
+// _canvas.sass
+//
+// @package ember/preloader/contour/generic
+
+@mixin canvas
+  .canvas
+    background: map-get($canvas, background)
+    color: map-get($canvas, color)
+
+    @include font-smoothing(on)

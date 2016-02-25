@@ -1,0 +1,13 @@
+/.*
+/*.sublime-project
+/bin/
+/bower.json
+/config.rb
+/config.ru
+/data/
+/Gemfile
+/Gemfile.lock
+/helpers/
+/lib/
+/Rakefile
+/tasks/

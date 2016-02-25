@@ -1,0 +1,42 @@
+{
+  "name": "ember-preloader",
+  "description": "A Preloader for ambitious web applications.",
+  "keywords": [
+    "Ember",
+    "Preloader"
+  ],
+  "homepage": "https://bitaculous.github.io/ember-preloader/",
+  "authors": [
+    "Maik Kempe <mkempe@bitaculous.com> (https://bitaculous.com)"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/bitaculous/ember-preloader.git"
+  },
+  "ignore": [
+    "**/.*",
+    "*.sublime-project",
+    "bin",
+    "config.rb",
+    "config.ru",
+    "data",
+    "Gemfile",
+    "Gemfile.lock",
+    "helpers",
+    "lib",
+    "package.json",
+    "Rakefile",
+    "tasks"
+  ],
+  "main": [
+    "dist/assets/stylesheets/ember/preloader.css",
+    "dist/assets/javascripts/ember/preloader.js"
+  ],
+  "devDependencies": {
+    "bitaculous-assetify": "bitaculous/assetify",
+    "nprogress": "rstacruz/nprogress",
+    "PreloadJS": "CreateJS/PreloadJS",
+    "verge": "~1.9.1"
+  }
+}

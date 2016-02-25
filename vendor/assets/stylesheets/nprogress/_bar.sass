@@ -1,0 +1,13 @@
+// _bar.sass
+//
+// @package vendor/nprogress
+
+@mixin bar
+  .bar
+    background: map-get-deep($progress, bar, color)
+    height: map-get-deep($progress, bar, height)
+    left: 0
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: map-get($progress, z-index)

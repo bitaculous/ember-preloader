@@ -1,0 +1,84 @@
+---
+layout: "index"
+id: "index"
+class: "default"
+title: "Ember Preloader"
+---
+
+- content_for :stylesheets do
+  = stylesheet_link_tag 'ember/preloader', { media: 'all' }
+
+- content_for :canvas do
+  .ember
+    .app
+
+    .preloader
+
+- content_for :javascripts do
+  = javascript_include_tag 'ember/preloader'
+
+  :coffeescript
+    selector = '.preloader'
+
+    manifest =
+      files: [
+        {
+          'id': 'app.css'
+          'type': 'css'
+          'src': '<%= asset_url('/assets/stylesheets/ember/app.css') %>'
+        }
+
+        {
+          'id': 'logo.png'
+          'type': 'image'
+          'src': '<%= asset_url('/assets/images/ember/preloader/contour/shared/elements/logo/background.png') %>'
+        }
+
+        {
+          'id': 'app.js'
+          'type': 'javascript'
+          'src': '<%= asset_url('/assets/javascripts/ember/app.js') %>'
+        }
+      ]
+
+      media: [
+        {
+          # Small, beginning at 320 until 480px
+          slug: 'small'
+          query: '(min-width: 320px) and (max-width: 480px)'
+          files: [
+            {
+              'id': 'logo.png'
+              'type': 'image'
+              'src': '<%= asset_url('/assets/images/ember/app/media/screen/small/shared/elements/logo/background.png') %>'
+            }
+          ]
+        }
+
+        {
+          # Large, beginning at 1024px
+          slug: 'large'
+          query: '(min-width: 1024px)'
+          files: [
+            {
+              'id': 'logo.png'
+              'type': 'image'
+              'src': '<%= asset_url('/assets/images/ember/app/media/screen/large/shared/elements/logo/background.png') %>'
+            }
+          ]
+        }
+      ]
+
+    preloader = new Preloader selector, manifest,
+      before: ->
+        console.info 'Preloading application...'
+
+        return
+      complete: ->
+        console.info 'Application loaded.'
+
+        app = new App '.app',
+          logging: true
+
+        return
+      logging: true

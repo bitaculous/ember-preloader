@@ -1,0 +1,17 @@
+{
+  "folders": [
+    {
+      "name": "ember-preloader",
+      "path": "./",
+      "folder_exclude_patterns": [
+        ".bundle",
+        "bin",
+        "bower_components",
+        "dist"
+      ],
+      "file_exclude_patterns": [
+        ".keep"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+// _preloader.sass
+//
+// @package ember/preloader/contour/generic
+
+@mixin preloader
+  .preloader
+    align-items: center
+    bottom: 0
+    display: none
+    justify-content: center
+    left: 0
+    position: absolute
+    right: 0
+    top: 0
+
+    &.active
+      display: flex
+
+    &.loading
+      cursor: wait
+
+    &.complete
+      cursor: auto

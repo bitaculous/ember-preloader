@@ -1,0 +1,13 @@
+// _logo.sass
+//
+// @package ember/preloader/media/screen/large/shared/elements
+
+@mixin logo
+  $logo-height: 128px
+  $logo-width:  128px
+
+  .logo
+    height: $logo-height
+    width: $logo-width
+
+    @include retina-image('ember/preloader/media/screen/large/shared/elements/logo/background', $logo-width $logo-height)
