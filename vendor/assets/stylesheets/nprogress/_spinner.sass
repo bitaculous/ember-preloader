@@ -3,19 +3,26 @@
 // @package vendor/nprogress
 
 @mixin spinner
+  $spinner-right:   calc(10px + #{map-get-deep($preloader, progress, bar, height)}) !default
+  $spinner-top:     calc(10px + #{map-get-deep($preloader, progress, bar, height)}) !default
+  $spinner-z-index: map-get-deep($preloader, progress, z-index)                     !default
+
+  $spinner-icon-border-color: map-get-deep($preloader, progress, spinner, icon, border-color) !default
+  $spinner-icon-border-width: map-get-deep($preloader, progress, spinner, icon, border-width) !default
+
   .spinner
     display: block
     position: fixed
-    right: calc(10px + #{map-get-deep($progress, bar, height)})
-    top: calc(10px + #{map-get-deep($progress, bar, height)})
-    z-index: map-get($progress, z-index)
+    right: $spinner-right
+    top: $spinner-top
+    z-index: $spinner-z-index
 
   .spinner-icon
     animation: nprogress-spinner 400ms linear infinite
-    border-color: map-get-deep($progress, spinner, icon, color) map-get-deep($progress, spinner, icon, color) transparent transparent
+    border-color: $spinner-icon-border-color
     border-radius: 50%
     border-style: solid
-    border-width: 2px
+    border-width: $spinner-icon-border-width
     box-sizing: border-box
     height: 16px
     width: 16px

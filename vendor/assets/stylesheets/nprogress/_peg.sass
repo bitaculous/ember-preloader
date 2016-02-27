@@ -3,11 +3,15 @@
 // @package vendor/nprogress
 
 @mixin peg
+  $peg-color:      map-get-deep($preloader, progress, peg, color)   !default
+  $peg-box-shadow: 0 0 10px $peg-color, 0 0 5px $peg-color          !default
+  $peg-opacity:    map-get-deep($preloader, progress, peg, opacity) !default
+
   .peg
-    box-shadow: 0 0 10px map-get-deep($progress, peg, box-shadow, color), 0 0 5px map-get-deep($progress, peg, box-shadow, color)
+    box-shadow: $peg-box-shadow
     display: block
     height: 100%
-    opacity: map-get-deep($progress, peg, opacity)
+    opacity: $peg-opacity
     position: absolute
     right: 0
     width: 100px

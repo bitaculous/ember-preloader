@@ -3,11 +3,15 @@
 // @package vendor/nprogress
 
 @mixin bar
+  $bar-background: map-get-deep($preloader, progress, bar, background) !default
+  $bar-heigth:     map-get-deep($preloader, progress, bar, height)     !default
+  $bar-z-index:    map-get-deep($preloader, progress, z-index)         !default
+
   .bar
-    background: map-get-deep($progress, bar, color)
-    height: map-get-deep($progress, bar, height)
+    background: $bar-background
+    height: $bar-heigth
     left: 0
     position: fixed
     top: 0
     width: 100%
-    z-index: map-get($progress, z-index)
+    z-index: $bar-z-index

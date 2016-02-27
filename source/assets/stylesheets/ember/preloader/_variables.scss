@@ -13,8 +13,8 @@ $defaults: (
 $colors: (
   primary: blueviolet,
 
-  black: #000,
-  white: #FFF
+  black: black,
+  white: white
 );
 
 // === Canvas ===
@@ -24,38 +24,41 @@ $canvas: (
   color: map-get($colors, white)
 );
 
-// === Progress ===
+// === Preloader ===
 
-$progress: (
-  bar: (
-    color: map-get($colors, primary),
-    height: 6px
-  ),
-
-  peg: (
-    box-shadow: (
-      color: map-get($colors, primary)
+$preloader: (
+  progress: (
+    bar: (
+      background: map-get($colors, primary),
+      height: 6px
     ),
-    opacity: 1.0
+
+    peg: (
+      color: map-get($colors, primary),
+      opacity: 1.0
+    ),
+
+    spinner: (
+      icon: (
+        border-color: map-get($colors, primary) map-get($colors, primary) transparent transparent,
+        border-width: 2px
+      )
+    ),
+
+    z-index: 9999
   ),
 
-  spinner: (
-    icon: (
-      color: map-get($colors, primary)
+  loading: (
+    logo: (
+      animation-duration: 2s,
+      animation-name: fade-in
     )
   ),
 
-  z-index: 9999
-);
-
-// === Heat up ===
-
-$heat-up: (
-  time: 2s
-);
-
-// === Cooling ===
-
-$cooling: (
-  time: 1s
+  complete: (
+    logo: (
+      animation-duration: 1s,
+      animation-name: fade-out
+    )
+  )
 );

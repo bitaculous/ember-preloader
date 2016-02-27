@@ -1,0 +1,19 @@
+// _settings.scss
+//
+// @package ember/app
+
+// === Bourbon ===
+
+$asset-pipeline: true;
+$em-base: map-get($defaults, baseline);
+$retina-suffix: '@2x';
+
+// === Breakpoint ===
+
+$breakpoint-no-query-fallbacks: true;
+$breakpoint-to-ems: true;
+
+// === Modular Scale ===
+
+$ms-base: 1rem;
+$ms-ratio: $major-third;

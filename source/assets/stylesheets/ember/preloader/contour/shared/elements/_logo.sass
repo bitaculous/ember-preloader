@@ -13,15 +13,15 @@
     opacity: $logo-opacity
     width: $logo-width
 
+    @include retina-image('ember/preloader/contour/shared/elements/logo/background', $logo-width $logo-height)
+
     .active &
       display: block
 
     .loading &
-      animation-duration: map-get($heat-up, time)
-      animation-name: fade-in
+      animation-duration: map-get-deep($preloader, loading, logo, animation-duration)
+      animation-name: map-get-deep($preloader, loading, logo, animation-name)
 
     .complete &
-      animation-duration: map-get($cooling, time)
-      animation-name: fade-out
-
-    @include retina-image('ember/preloader/contour/shared/elements/logo/background', $logo-width $logo-height)
+      animation-duration: map-get-deep($preloader, complete, logo, animation-duration)
+      animation-name: map-get-deep($preloader, complete, logo, animation-name)
