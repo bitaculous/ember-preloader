@@ -83,11 +83,11 @@ Usage
 
     preloader = new Preloader selector, manifest,
       before: ->
-        console.info 'Before...'
+        console.info 'Preloading application...'
 
         return
       complete: ->
-        console.info 'Complete...'
+        console.info 'Preloaded application.'
 
         return
       logging: true
@@ -100,11 +100,11 @@ Usage
 
     preloader = new Preloader selector, null,
       before: ->
-        console.info 'Before...'
+        console.info 'Preloading application...'
 
         return
       complete: ->
-        console.info 'Complete...'
+        console.info 'Preloaded application.'
 
         return
       logging: true
